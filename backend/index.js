@@ -1,10 +1,15 @@
 const connectToMongo = require('./db')
 const express = require('express')
-connectToMongo();
+var cors = require('cors')
 
+
+
+connectToMongo();
 const app = express()
 const port = 5000
 
+
+app.use(cors())
 app.use(express.json())
 
 //Available Routes
@@ -16,6 +21,6 @@ app.listen(port, (err) => {
     if (err) {
         return console.error(err);
     }
-  console.log(`Example app listening on port ${port}`)
+  console.log(`inotebook backend app listening on port ${port}`)
 })
 

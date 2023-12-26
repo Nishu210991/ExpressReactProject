@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Notes from "./Notes";
 
-export default function Home() {
+
+const Home = (props)=> {
+   const {showAlert} = props
   return (
     <div>
-      <h1>My iNoteBook</h1>
+
+    <Notes showAlert={showAlert}/>
+     
     </div>
-  )
+  );
 }
+
+export default Home
